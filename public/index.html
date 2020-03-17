@@ -1,0 +1,186 @@
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>MTB TripTracker</title>
+  <link rel="stylesheet" href="/public/themes/myTheme.min.css" />
+	<link rel="stylesheet" href="/public/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="/public/javascripts/index.js"></script>
+  <!-- //themes/myTheme.min.css -->
+</head>
+<body>
+  <!-- Start of Home page -->
+  <div data-role="page" id="home">
+    <!--  login page header -->
+    <div data-role="header" data-theme='a'>
+      <!-- helpful location   -->
+      <!-- https://demos.jquerymobile.com/1.2.0/docs/toolbars/docs-navbar.html -->
+
+      <h1>MTB TripTracker </h1>
+      <div data-role="navbar" data-theme='a'>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#addTripPage">Add trip</a></li>
+          <li><a href="#listTripsPage">Your trips</a></li>
+        </ul>
+      </div><!-- /navbar -->
+
+    </div>
+    <!--  login page content -->
+    <div data-role="content" data-theme='a'>
+      <h2> Welcome to the MTB TripTracker. 
+      </h2>
+      <p>Keep track of your stats all in one place. <br />
+        We'll even let you know how many miles you've biked and your elevation gain.</p>
+      <button><a href="#addTripPage">Begin</a></button>
+    </div>
+
+    <!--  login page footer -->
+    <div data-role="footer" data-theme='a'>
+      <h1>Copyright by Sam Carson and Neil McCracken</h1>
+    </div>
+  </div>
+
+
+  <!-- Start of page 3 -->
+  <div data-role="page" id="addTripPage">
+    <!--  page 3 header -->
+    <div data-role="header" data-theme='c'>
+      <h1>MTB TripTracker </h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#addTripPage">Add trip</a></li>
+          <li><a href="#listTripsPage">Your trips</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!--  page 3 content -->
+    <div data-role="content" data-theme='c'>
+      <h3 id="userNameHeader"></h3>
+      <h3>Tell us about your latest trip</h3>
+      <p> <!--Mountain, TrailName, Difficulty Rating(dropdown menu), Elevation, Distance-->
+      </p>
+      Where were you riding <br />
+      <input type="text" value="" id="where" />
+      Trail name <br />
+      <input type="text" value="" id="trail" />
+      <form>
+        <div class="ui-field-contain">
+          <label for="select-difficulty">Select a trail difficulty</label>
+          <select name="select-difficulty" id="select-difficulty">
+          <option value="green">Green-Circle</option>
+          <option value="blue">Blue-Square</option>
+          <option value="black">Black-Diamond</option>
+          <option value="doubleBlack">Double-Black Diamond</option>
+        </select>
+        </div>
+      </form>
+      Distance (miles) <br />
+      <input type="number" value="" id="distance" />
+      Elevation gain<br />
+      <input type="number" value="" id="elevation" />
+
+      <button id="addTripBtn">Add Trip</button> 
+      <button id="clearBtn">Clear Data</button>
+
+    <!--  page 3 footer -->
+    <div data-role="footer" data-theme='c'>
+      <h1>Copyright by Sam Carson and Neil McCracken</h1>
+    </div>
+  </div>
+  </div>
+
+  <!-- Start of page 4 -->
+  <div data-role="page" id="listTripsPage">
+    <!--  page 4 header -->
+    <div data-role="header" data-theme='a'>
+      <h1>MTB TripTracker </h1>
+      <div data-role="navbar" data-theme='a'>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#addTripPage">Add trip</a></li>
+          <li><a href="#listTripsPage">Your trips</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!--  page 4 content -->
+    <div data-role="content" data-theme='a'>
+      <h3>Hello!</h3>
+      <!-- <p id="userTripList"></p> -->
+     <ul id="userTripList">
+      </ul>
+
+      <div>
+        
+        <button id="distanceButton">Filter by Miles</button>
+        <button id="totalMileageButton">Total Mileage</button>
+        Enter Trip to Delete <br />
+        <input type="text" value="" id="deleteTrip" data-inline="true" />
+        <input type="button" value="Delete Trip by Name" id="buttonDelete" data-inline="true"   />
+        <p id='totalMileage'>Distance and Elevation Total</p>
+        <!-- <label for="basic">Total Distance:</label>
+        <input type="text" name="name" id="totalMileage"   /> -->
+      </div>
+    </div>
+
+    <!--  page 4 footer -->
+    <div data-role="footer" data-theme='a'>
+      <h1>Copyright 2020 by Sam Carson and Neil McCracken</h1>
+    </div>
+  </div>
+
+  <div data-role="page" id="detailsPage">
+    <!--  page 4 header -->
+    <div data-role="header" data-theme='a'>
+      <h1>MTB TripTracker </h1>
+      <div data-role="navbar" data-theme='a'>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#addTripPage">Add trip</a></li>
+          <li><a href="#listTripsPage">Your trips</a></li>
+        </ul>
+      </div><!-- /navbar -->
+
+    </div>
+    
+    <div data-role="content" data-theme='a'>
+      <h3>Trip Info</h3>
+      <!-- <p id="userTripList"></p> -->
+     
+        <p> Here are the details</p>
+        <p id="IDparmHere">Text Here</p>  <!-- hidden    a place to stash the user ID -->
+        <div>
+      <ul data-role='listview'>
+        <li id='aWhere'></li>
+        <li id='aTrail'></li>
+        <li id='aDifficulty'></li>
+        <li id='aDistance'></li>
+        <li id='aElevation'></li>
+      </ul>
+      </div>
+      
+    </div>
+
+    <!--  page 5 footer -->
+    <div data-role="footer" data-theme='a'>
+      <h1>Copyright by Sam Carson and Neil McCracken</h1>
+    </div>
+  </div>
+
+</body>
+</html>
+
+    <!-- Start of  page -->
+    <div data-role="page"  id="refreshPage">
+       <!--  content -->
+        <div data-role="content" >
+              <!--  this page is used to to jump to and then back to a page to force a pagebeforeload event -->
+        </div>
+    </div>  
+
+</body>
